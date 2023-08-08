@@ -1,9 +1,28 @@
-<p-menubar [model]="items">
-  <ng-template pTemplate="end">
-      <input type="text" pInputText placeholder="Search" class="w-full" />
-  </ng-template>
-  <ng-template  pTemplate="end">
-    <a href=""><i class="pi pi-bars" style="font-size: 1rem;"></i></a>
-  </ng-template>
-</p-menubar>
-<p-button label="Submit"></p-button>
+<!-- mainView-searchbar -->
+  <div class="h-screen mix-w-12 px-3 surface-300 ml-6">
+
+
+    <!-- mainView-searchbar -->
+    <div class="w-full flex justify-content-end">
+      <div class="gap-2 flex align-items-center pt-4">
+        <p-button styleClass="p-button-secondary p-button-text border-circle w-2rem h-2rem" icon="pi pi-chevron-left"></p-button>
+        <p-button styleClass="p-button-secondary p-button-text border-circle w-2rem h-2rem" icon="pi pi-chevron-right"></p-button>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search text-900 font-bold"></i>
+          <input type="text" pInputText placeholder="Search" class="pl-5 h-2rem border-round">
+        </span>
+        <p-button styleClass="p-button-secondary p-button-text border-circle w-2rem h-2rem" icon="pi pi-bars"></p-button>
+      </div>
+    </div>
+    <!-- mainView-searchbar end-->
+
+    <!-- mainView -->
+    <div class="p-2">123</div>
+    <!-- mainView end-->
+    
+  </div>
+  <app-sidebar></app-sidebar>
+
+  
+
+
