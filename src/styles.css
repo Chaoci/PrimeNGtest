@@ -13,3 +13,39 @@ body {
   height: 35px;
   width: 250px;
 }
+
+/* 調整splitbutton */
+.p-splitbutton .p-splitbutton-menubutton {
+  background-color:#136c34 !important;
+}
+
+.p-splitbutton .p-button{
+  background-color:#136c34 !important ;
+  border-color: #136c34 !important;
+}
+
+
+.p-tabmenuitem{
+  border: 1px solid #136c34 !important;
+  border-bottom: none !important;
+  font-size: 22px !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+.p-tabmenu .p-tabmenu-nav{
+  background-color: #EEEEEE !important;
+}
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+  padding:10px !important;
+  background-color: #EEEEEE !important;
+}
+
+
+.titleColor{
+  color:#3C6353;
+}
+
+.mycolor{
+  background-color: #DBE5E1;
+  border-color:#DBE5E1;
+}

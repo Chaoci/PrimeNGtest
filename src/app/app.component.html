@@ -1,28 +1,28 @@
 <!-- mainView-searchbar -->
-  <div class="h-screen mix-w-12 px-3 surface-300 ml-6">
+  <div class="h-screen mix-w-12 pl-3 surface-300 ml-6">
 
 
     <!-- mainView-searchbar -->
     <div class="w-full flex justify-content-end">
-      <div class="gap-2 flex align-items-center pt-4">
+      <div class="gap-2 flex align-items-center pt-2 p-2">
         <p-button styleClass="p-button-secondary p-button-text border-circle w-2rem h-2rem" icon="pi pi-chevron-left"></p-button>
         <p-button styleClass="p-button-secondary p-button-text border-circle w-2rem h-2rem" icon="pi pi-chevron-right"></p-button>
-        <span class="p-input-icon-left">
-          <i class="pi pi-search text-900 font-bold"></i>
-          <input type="text" pInputText placeholder="Search" class="pl-5 h-2rem border-round">
-        </span>
+          <span class="p-input-icon-left">
+            <i class="pi pi-search text-900"></i>
+            <input type="text" placeholder="請輸入文字" class="pl-5 h-2rem border-round" pInputText [(ngModel)]="value" />
+          </span>
         <p-button styleClass="p-button-secondary p-button-text border-circle w-2rem h-2rem" icon="pi pi-bars"></p-button>
       </div>
     </div>
     <!-- mainView-searchbar end-->
 
     <!-- mainView -->
-    <div class="p-2">123</div>
+    <app-payment-manage></app-payment-manage>
     <!-- mainView end-->
-    
-  </div>
-  <app-sidebar></app-sidebar>
 
-  
+    <app-sidebar></app-sidebar>
+  </div>
+
+
 
 

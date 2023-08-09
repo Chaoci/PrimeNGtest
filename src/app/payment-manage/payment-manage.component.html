@@ -1,3 +1,47 @@
-<div class="w-screen h-full surface-400 z-0">
-    123
+<div class="w-full surface-200 border-round-top-2xl border-noround-right z-0 pt-2 p-3">
+
+  <!-- 頁面名稱 -->
+  <div class="flex justify-content-between px-2">
+    <!-- subtitle -->
+    <div >
+      <h3 class="titleColor m-0">門診批價系統 /批價管理 <i class="pi pi-question-circle"></i></h3>
+    </div>
+    <!-- subtitle end -->
+
+    <!-- button-area -->
+    <div class="button-area flex gap-3">
+      <div class="card">
+        <p-toast></p-toast>
+        <p-splitButton styleClass="p-button-sm" appendTo="body" label="列印" (onClick)="save('info')" [model]="items"></p-splitButton>
+      </div>
+      <p-button styleClass="p-button-sm p-button-sm text-0 mycolor text-900 hover:text-0 hover:bg-green-800" label="收費查詢"></p-button>
+      <p-button styleClass="p-button-sm text-0 mycolor text-900 hover:text-0 hover:bg-green-800" label="清除內容"></p-button>
+      <p-button styleClass="p-button-sm bg-green-800" label="存擋"></p-button>
+    </div>
+    <!-- button-area end -->
+  </div>
+
+  <!-- 輸入病例號 -->
+  <div class="w-full bg-white border-round-xl p-2 shadow-3 mt-4 mb-3 flex justify-content-between align-items-center">
+    <div class="two-input flex gap-2">
+      <div class="flex flex-column gap-2">
+        <label htmlFor="username" class="font-bold text-lg">病例號碼/身分證號</label>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search text-900"></i>
+          <input type="text" placeholder="請輸入病例號碼或身分證號" class="pl-5 h-3rem text-lg w-20rem border-round" pInputText [(ngModel)]="value" />
+        </span>
+        <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+      </div>
+      <div class="card flex flex-column justify-content-center gap-2">
+        <label htmlFor="selection" class="font-bold text-lg">收費類別</label>
+        <p-dropdown styleClass="text-lg h-3rem w-20rem border-round" [options]="selection" [(ngModel)]="selected" optionLabel="name"></p-dropdown>
+      </div>
+    </div>
+    <div class="takemd-number text-xl">
+      <h4>領藥號 {{ number }} -</h4>
+    </div>
+  </div>
+  <!-- 收費名稱 -->
+  <app-payment-detail></app-payment-detail>
+
 </div>
