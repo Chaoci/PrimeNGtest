@@ -40,6 +40,30 @@ body {
   background-color: #EEEEEE !important;
 }
 
+.p-datepicker-trigger{
+  color:#000 !important;
+  background: transparent !important;
+  border-color: #BDBDBD !important;
+}
+
+.p-datatable thead th {
+  font-size: 18px !important;
+  color:#3C6353 !important;
+  padding:0 !important;
+  font-weight: bold !important;
+  text-align:center !important;
+  border-bottom:1px solid #000 !important;
+}
+
+.p-datatable tbody td {
+  border: 1px solid #ccc;
+  padding:0 !important;
+  font-weight: bold;
+  text-align: end !important;
+  padding-top: 5px !important;
+  padding-right: 2px !important;
+  border-bottom:1px solid rgb(182, 181, 181) !important;
+}
 
 .titleColor{
   color:#3C6353;
@@ -48,4 +72,7 @@ body {
 .mycolor{
   background-color: #DBE5E1;
   border-color:#DBE5E1;
+}
+.myheight{
+  min-height: 1000px;
 }
