@@ -1,12 +1,21 @@
-<div class="absolute left-0 top-0 surface-200 w-4rem h-screen flex flex-column align-items-center justify-content-between myheight">
+
+<div [ngClass]="containerClass" class="containerClass fixed left-0 top-0 surface-200  h-screen flex flex-column align-items-center justify-content-between" >
     <!-- top-sidebar -->
-    <div class="p-5">
-        <i class="pi pi-angle-double-right" style="font-size: 1.5rem; color:rgb(44, 140, 44);"></i>
+    <div class="p-5 flex flex-column gap-4">
+        <i *ngIf="!isExpandedIn" class="pi pi-angle-double-right cursor-pointer" style="font-size: 1.5rem; color:rgb(44, 140, 44);" (click)="toggleExpand()"></i>
+        <i *ngIf="isExpandedIn" class="pi pi-angle-double-left cursor-pointer" style="font-size: 1.5rem; color:rgb(44, 140, 44);" (click)="toggleExpand()"></i>
+        <i class="pi pi-comment cursor-pointer iconStuff"></i>
+        <i class="pi pi-eye cursor-pointer iconStuff"></i>
+        <i class="pi pi-wrench cursor-pointer iconStuff"></i>
     </div>
 
     <!-- bottom-sidebar -->
-    <div class="p-5">
-        <i class="pi pi-angle-double-right" style="font-size: 1.5rem; color:rgb(44, 140, 44);"></i>
+    <div class="p-5 flex flex-column gap-3 align-items-center">
+      <i class="pi pi-apple cursor-pointer iconStuff" ></i>
+      <i class="pi pi-home cursor-pointer iconStuff" ></i>
+      <img class="w-2rem h-2rem border-circle cursor-pointer" src="https://github.com/Chaoci/NFT_web/blob/main/app/assets/images/week8-petpet/homestay-3.jpeg?raw=true" alt="">
+      <i class="pi pi-table cursor-pointer iconStuff" ></i>
+      <i class="pi pi-sign-out cursor-pointer iconStuff" ></i>
     </div>
 
 

@@ -8,6 +8,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { PaymentDetailComponent } from './payment-detail/payment-detail.component';
+import { PaymentSearchbarComponent } from './payment-searchbar/payment-searchbar.component';
 
 @Component({
   selector: 'app-payment-manage',
@@ -19,7 +20,8 @@ import { PaymentDetailComponent } from './payment-detail/payment-detail.componen
     InputTextModule,
     FormsModule,
     DropdownModule,
-    PaymentDetailComponent
+    PaymentDetailComponent,
+    PaymentSearchbarComponent,
   ],
   templateUrl: './payment-manage.component.html',
   styleUrls: ['./payment-manage.component.css'],
@@ -28,9 +30,7 @@ import { PaymentDetailComponent } from './payment-detail/payment-detail.componen
 export class PaymentManageComponent {
   value:string| undefined;
   items: MenuItem[];
-  selection: any | undefined;
-  selected: any | undefined;
-  number: null | undefined;
+
     private messageService=inject(MessageService);
     constructor() {
         this.items = [
@@ -52,12 +52,6 @@ export class PaymentManageComponent {
             { separator: true },
             { label: 'Setup', icon: 'pi pi-cog', routerLink: ['/setup'] }
         ];
-        this.selection = [
-          { name: '當日門診急診', code: 'TD' },
-          { name: '昨日門診急診', code: 'YD' },
-          { name: '過去門診急診', code: 'PD' },
-          { name: '當入住院', code: 'TL' }
-      ];
     }
 
     save(severity: string) {

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
@@ -27,11 +27,25 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent {
   title = 'testing';
   value:string|undefined;
-    ngOnInit() {
+  expandView = '';
+  isExpand!: boolean;
 
+  @ViewChild('child') childComponent!: SidebarComponent; // 取得子元件實例
+  ngAfterViewInit() {
+    // 訂閱子元件值的變化
+    this.childComponent.isExpandedChange.subscribe((newValue) => {
+      // 在這裡處理子元件值的變化
+      this.isExpand = newValue;
+      this.changeClass();
+    });
+  }
+  changeClass(){
+    if(this.isExpand){
+      this.expandView = 'expandMyView';
+    }else{
+      this.expandView = 'collapseMyView';
     }
-
-
+  }
 
 
 }

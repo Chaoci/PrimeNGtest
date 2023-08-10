@@ -1,5 +1,5 @@
 <!-- mainView-searchbar -->
-  <div class="h-screen mix-w-12 pl-3 surface-300 ml-6">
+  <div [ngClass]="expandView" class="h-screen mix-w-12 pl-3 surface-300 ml-6">
 
 
     <!-- mainView-searchbar -->
@@ -11,7 +11,7 @@
             <i class="pi pi-search text-900"></i>
             <input type="text" placeholder="請輸入文字" class="pl-5 h-2rem border-round" pInputText [(ngModel)]="value" />
           </span>
-        <p-button styleClass="p-button-secondary p-button-text border-circle w-2rem h-2rem" icon="pi pi-bars"></p-button>
+        <p-button styleClass="p-button-secondary p-button-text border-circle w-2rem h-2rem" icon="pi pi-list"></p-button>
       </div>
     </div>
     <!-- mainView-searchbar end-->
@@ -20,7 +20,7 @@
     <app-payment-manage></app-payment-manage>
     <!-- mainView end-->
 
-    <app-sidebar></app-sidebar>
+    <app-sidebar #child></app-sidebar>
   </div>
 
 

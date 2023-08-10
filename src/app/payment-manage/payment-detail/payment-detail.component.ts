@@ -5,19 +5,23 @@ import { DropdownModule } from 'primeng/dropdown';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { CalendarModule } from 'primeng/calendar';
 import { TableModule } from 'primeng/table';
+import { TabViewModule } from 'primeng/tabview';
+import { PaymentProfileComponent } from "./payment-profile/payment-profile.component";
 
 @Component({
-  selector: 'app-payment-detail',
-  standalone: true,
-  imports: [
-    TabMenuModule,
-    FormsModule,
-    DropdownModule,
-    CalendarModule,
-    TableModule,
-  ],
-  templateUrl: './payment-detail.component.html',
-  styleUrls: ['./payment-detail.component.css']
+    selector: 'app-payment-detail',
+    standalone: true,
+    templateUrl: './payment-detail.component.html',
+    styleUrls: ['./payment-detail.component.css'],
+    imports: [
+        TabMenuModule,
+        FormsModule,
+        DropdownModule,
+        CalendarModule,
+        TableModule,
+        TabViewModule,
+        PaymentProfileComponent
+    ]
 })
 
 export class PaymentDetailComponent implements OnInit{
@@ -29,7 +33,7 @@ export class PaymentDetailComponent implements OnInit{
 
   date: Date | undefined = new Date();
   products: any;
-  
+
   ngOnInit(): void {
   this.items = [
     { label: '醫令收費'},
@@ -43,7 +47,7 @@ export class PaymentDetailComponent implements OnInit{
   ];
   this.products = [
     {partially:'0'},
-    
+
   ]
 }
 

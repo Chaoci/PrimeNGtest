@@ -1,0 +1,167 @@
+<div class="detail-profile mt-1 h-full flex p-2 surface-300 border-round-lg gap-2">
+
+
+  <div class="manyinput h-full flex gap-4 w-5 surface-100 border-round-lg p-2 shadow-3">
+    <div class="profile-info flex flex-column gap-3 w-6">
+      <div class="flex flex-column gap-2">
+        <label htmlFor="username" class="font-bold text-lg">身分證號</label>
+        <input type="text" placeholder="自動帶入" class="p-2 h-3rem text-lg w-12 border-round surface-300" pInputText [(ngModel)]="value" [disabled]="true"/>
+        <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+      </div>
+      <div class="flex flex-column gap-2">
+        <label htmlFor="name" class="font-bold text-lg">姓名</label>
+        <input type="text" placeholder="自動帶入" class="p-2 h-3rem text-lg w-12 border-round surface-300" pInputText [(ngModel)]="value" [disabled]="true"/>
+        <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+      </div>
+      <div class="card flex flex-column justify-content-center gap-2">
+        <label htmlFor="gender" class="font-bold text-lg">性別</label>
+        <p-dropdown styleClass="text-lg h-3rem w-12 border-round surface-400" [options]="selection" [(ngModel)]="selected" optionLabel="gender" [disabled]="true"></p-dropdown>
+      </div>
+      <div class="card flex flex-column justify-content-center gap-2">
+        <label htmlFor="selection" class="font-bold text-lg">出生年月日</label>
+        <p-calendar styleClass="w-12 surface-400 border-round text-lg" dateFormat="yy-mm-dd" [disabled]="true" [(ngModel)]="date" [showIcon]="true"></p-calendar>
+      </div>
+      <div class="card flex flex-column justify-content-center gap-2">
+        <label htmlFor="department" class="font-bold text-lg">科別</label>
+        <p-dropdown styleClass="text-lg h-3rem w-12 border-round surface-200" [options]="selection" [(ngModel)]="selected" optionLabel="department"  placeholder="自動帶入"></p-dropdown>
+      </div>
+      <div class="card flex flex-column justify-content-center gap-2">
+        <label htmlFor="department" class="font-bold text-lg">醫生</label>
+        <p-dropdown styleClass="text-lg h-3rem w-12 border-round surface-200" [options]="selection" [(ngModel)]="selected" optionLabel="department"  placeholder="自動帶入"></p-dropdown>
+      </div>
+      <div class="flex flex-column gap-2">
+        <label htmlFor="healthInsurance" class="font-bold text-lg">健保卡號</label>
+        <input type="text" placeholder="自動帶入" class="p-2 h-3rem text-lg w-12 border-round surface-300" pInputText [(ngModel)]="value" [disabled]="true"/>
+        <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+      </div>
+    </div>
+    <div class="profile-id flex flex-column gap-3 w-6">
+      <div class="card flex flex-column justify-content-center gap-2">
+        <label htmlFor="department" class="font-bold text-lg">健保身分</label>
+        <p-dropdown styleClass="text-lg h-3rem w-12 border-round surface-200" [options]="selection" [(ngModel)]="selected" optionLabel="department"  placeholder="請選擇"></p-dropdown>
+      </div>
+      <div class="card flex flex-column justify-content-center gap-2">
+        <label htmlFor="department" class="font-bold text-lg">優待身分</label>
+        <p-dropdown styleClass="text-lg h-3rem w-12 border-round surface-200" [options]="selection" [(ngModel)]="selected" optionLabel="department"  placeholder="請選擇"></p-dropdown>
+      </div>
+      <div class="card flex flex-column justify-content-center gap-2">
+        <label htmlFor="department" class="font-bold text-lg">部分負擔</label>
+        <p-dropdown styleClass="text-lg h-3rem w-12 border-round surface-200" [options]="selection" [(ngModel)]="selected" optionLabel="department"  placeholder="-"></p-dropdown>
+      </div>
+      <div class="card flex flex-column justify-content-center gap-2">
+        <label htmlFor="department" class="font-bold text-lg">給付類別</label>
+        <p-dropdown styleClass="text-lg h-3rem w-12 border-round surface-200" [options]="selection" [(ngModel)]="selected" optionLabel="department"  placeholder="普通疾病"></p-dropdown>
+      </div>
+      <div class="card flex flex-column justify-content-center gap-2">
+        <label htmlFor="department" class="font-bold text-lg">案件類別</label>
+        <p-dropdown styleClass="text-lg h-3rem w-12 border-round surface-200" [options]="selection" [(ngModel)]="selected" optionLabel="department"  placeholder="請選擇"></p-dropdown>
+      </div>
+      <div class="card flex flex-column justify-content-center gap-2">
+        <label htmlFor="department" class="font-bold text-lg">療程類別</label>
+        <p-dropdown styleClass="text-lg h-3rem w-12 border-round surface-200" [options]="selection" [(ngModel)]="selected" optionLabel="department"  placeholder="請選擇"></p-dropdown>
+      </div>
+      <div class="card flex flex-column justify-content-center gap-2">
+        <label htmlFor="department" class="font-bold text-lg">慢性病連續處方籤號</label>
+        <p-dropdown styleClass="text-lg h-3rem w-12 border-round surface-200" [options]="selection" [(ngModel)]="selected" optionLabel="department"  placeholder="-"></p-dropdown>
+      </div>
+      <p-button styleClass="p-button-lg p-button-sm text-0 mycolor text-900 hover:text-0 hover:bg-green-800" label="重大傷病"></p-button>
+    </div>
+  </div>
+
+  <div class="paymentshow w-7 surface-300 h-full">
+    <div class="card surface-100 p-3 border-round-lg shadow-3 w-12">
+      <p class="text-2xl font-bold -mt-1 mb-2">計費項目</p>
+      <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }" class="top-table">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>部分負擔</th>
+                  <th>掛號費用</th>
+                  <th>健保記帳金額</th>
+                  <th>健保藥費</th>
+                  <th>特約記帳</th>
+                  <th>優免金額</th>
+                  <th>藥品自負差額</th>
+                  <th>檢查自負差額</th>
+                  <th>總計費用</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-product>
+              <tr>
+                <td>{{ product.partially }}</td>
+                <td>150</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>200</td>
+              </tr>
+          </ng-template>
+      </p-table>
+    </div>
+    <div class="calculate mt-2 surface-100 p-3 py-6 border-round-lg shadow-3 w-12">
+      <div class="cal flex justify-content-between align-items-center gap-2">
+        <div class="flex flex-column gap-2 w-4">
+          <label htmlFor="price" class="font-bold text-lg">應收金額</label>
+          <input type="text" placeholder="自動帶入" class="p-2 h-3rem text-lg w-12 border-round surface-200" pInputText [(ngModel)]="value"/>
+          <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+        </div>
+        <div class="minus-icon pt-5">
+          <i class="pi pi-minus" style="font-size: 1rem;"></i>
+        </div>
+        <div class="flex flex-column gap-2 w-4">
+          <label htmlFor="actual-money" class="font-bold text-lg">實收現金</label>
+          <input type="text" placeholder="請輸入金額" class="p-2 h-3rem text-lg w-12 border-round surface-200" pInputText [(ngModel)]="value"/>
+          <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+        </div>
+        <div class="minus-icon pt-5">
+          <i class="pi pi-minus" style="font-size: 1rem;"></i>
+        </div>
+        <div class="flex flex-column gap-2 w-4">
+          <label htmlFor="other-patment" class="font-bold text-lg">其他付款</label>
+          <input type="text" placeholder="請輸入金額" class="p-2 h-3rem text-lg w-12 border-round surface-200" pInputText [(ngModel)]="value"/>
+          <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+        </div>
+        <div class="minus-icon pt-5">
+          <p class="text-3xl text-bold ">=</p>
+        </div>
+        <div class="flex flex-column gap-2 w-4">
+          <label htmlFor="other-patment" class="font-bold text-lg">找零</label>
+          <input type="text" placeholder="請輸入金額" class="p-2 h-3rem text-lg w-12 border-round surface-200" pInputText [(ngModel)]="value"/>
+          <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+        </div>
+      </div>
+    </div>
+    <div class="card h-25rem mt-2 surface-100 p-3 border-round-lg shadow-3 w-12 flex-1">
+      <p class="text-2xl font-bold -mt-1 mb-2">付款紀錄</p>
+      <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }" class="low-table">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>付款別</th>
+                  <th>金額</th>
+                  <th>信用卡卡號/支票號碼</th>
+                  <th>安全碼</th>
+                  <th>截止日期</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-product>
+              <tr>
+                <td>信用卡</td>
+                <td>150</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>現金</td>
+                <td>150</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+          </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
