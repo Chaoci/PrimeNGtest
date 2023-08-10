@@ -1,7 +1,7 @@
-<div class="detail-profile mt-1 h-full flex p-2 surface-300 border-round-lg gap-2">
+<div class="detail-profile heightAdjust2 mt-1 flex p-2 surface-300 border-round-lg gap-2 overflow-auto">
 
 
-  <div class="manyinput h-full flex gap-4 w-5 surface-100 border-round-lg p-2 shadow-3">
+  <div class="heightAdjust flex gap-4 w-5 surface-100 border-round-lg p-2 shadow-3 overflow-auto">
     <div class="profile-info flex flex-column gap-3 w-6">
       <div class="flex flex-column gap-2">
         <label htmlFor="username" class="font-bold text-lg">身分證號</label>
@@ -68,7 +68,7 @@
     </div>
   </div>
 
-  <div class="paymentshow w-7 surface-300 h-full">
+  <div class="paymentshow w-7 surface-300">
     <div class="card surface-100 p-3 border-round-lg shadow-3 w-12">
       <p class="text-2xl font-bold -mt-1 mb-2">計費項目</p>
       <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }" class="top-table">
@@ -133,7 +133,7 @@
         </div>
       </div>
     </div>
-    <div class="card h-25rem mt-2 surface-100 p-3 border-round-lg shadow-3 w-12 flex-1">
+    <div class="card height mt-2 surface-100 p-3 border-round-lg shadow-3 w-12 overflow-auto">
       <p class="text-2xl font-bold -mt-1 mb-2">付款紀錄</p>
       <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }" class="low-table">
           <ng-template pTemplate="header">

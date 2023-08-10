@@ -6,6 +6,7 @@
 body {
   font-family: var(--font-family);
   margin: 0 auto;
+  background:#EEEEEE;
 }
 
 .p-menubar input{
@@ -119,6 +120,7 @@ body {
   background-color: #EEEEEE !important;
   padding:0;
   padding-top:15px;
+  height: 100%;
 }
 
 .titleColor{
@@ -156,3 +158,53 @@ body {
   font-size: 24px;
   color:rgb(86, 90, 86);
 }
+
+.manyinput{
+  height: 80vh;
+}
+
+.heightAdjust{
+  min-height:300px;
+  height: 60vh !important;
+  max-height: 780px;
+}
+
+.heightAdjust2{
+  min-height:300px;
+  height: 60vh !important;
+  max-height: 780px;
+}
+
+@media (max-height:1002px) {
+  .heightAdjust{
+    min-height:300px;
+    height: 63vh !important;
+    max-height: 750px;
+  }
+  .heightAdjust2{
+    min-height:100px;
+    height: 67vh !important;
+    max-height: 780px;
+  }
+  .height{
+    height: 42%;
+  }
+}
+
+@media (max-height:843px) {
+  .heightAdjust{
+    min-height:300px;
+    height: 60vh !important;
+    max-height: 750px;
+  }
+  .heightAdjust2{
+    min-height:100px;
+    height: 62vh !important;
+    max-height: 780px;
+  }
+  .height{
+    height: 30%;
+    overflow-y: auto;
+  }
+}
+
