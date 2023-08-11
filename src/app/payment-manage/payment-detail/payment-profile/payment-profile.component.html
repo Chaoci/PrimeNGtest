@@ -64,7 +64,41 @@
         <label htmlFor="department" class="font-bold text-lg">慢性病連續處方籤號</label>
         <p-dropdown styleClass="text-lg h-3rem w-12 border-round surface-200" [options]="selection" [(ngModel)]="selected" optionLabel="department"  placeholder="-"></p-dropdown>
       </div>
-      <p-button styleClass="p-button-lg p-button-sm text-0 mycolor text-900 hover:text-0 hover:bg-green-800" label="重大傷病"></p-button>
+      <div class="card pb-3">
+        <p-button styleClass="p-button-sm text-0 mycolor text-900 hover:text-0 hover:bg-green-800" (click)="showDialog()" label="重大傷病"></p-button>
+        <p-dialog header="重大傷病" [(visible)]="visible" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+          <div class="dia-content w-full">
+            <div class="numbers flex mt-2 gap-2">
+              <div class="flex flex-column gap-2 w-6">
+                <label htmlFor="username" class="font-bold text-lg">重病編號</label>
+                <input type="text" placeholder="請輸入重病編號" class="p-2 h-3rem text-lg w-12 border-round surface-100" pInputText [(ngModel)]="value" [disabled]="true"/>
+                <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+              </div>
+              <div class="flex flex-column gap-2 w-6">
+                <label htmlFor="username" class="font-bold text-lg">疾病碼</label>
+                <input type="text" placeholder="請輸入疾病碼" class="p-2 h-3rem text-lg w-12 border-round surface-100" pInputText [(ngModel)]="value" [disabled]="true"/>
+                <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+              </div>
+            </div>
+            <div class="date-content flex mt-2 mb-2 gap-2">
+              <div class="card flex flex-column justify-content-center gap-2 w-6">
+                <label htmlFor="selection" class="font-bold text-lg">開始日期</label>
+                <p-calendar styleClass="w-12 surface-400 border-round text-lg" appendTo="body" dateFormat="yy-mm-dd" [(ngModel)]="date" [showIcon]="true"></p-calendar>
+              </div>
+              <div class="card flex flex-column justify-content-center gap-2 w-6">
+                <label htmlFor="selection" class="font-bold text-lg">截止日期</label>
+                <p-calendar styleClass="w-12 surface-400 border-round text-lg" appendTo="body" dateFormat="yy-mm-dd" [(ngModel)]="date" [showIcon]="true"></p-calendar>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="button-area flex justify-content-end gap-2">
+            <p-button styleClass="p-button-sm text-0 mycolor text-900 hover:text-0 hover:bg-green-800" (click)="closeDialog()" label="取消"></p-button>
+            <p-button styleClass="p-button-sm text-white bg-green-800 text-900 hover:text-0 hover:mycolor" (click)="closeDialog()" label="確定"></p-button>
+          </div>
+          </p-dialog>
+      </div>
+
     </div>
   </div>
 

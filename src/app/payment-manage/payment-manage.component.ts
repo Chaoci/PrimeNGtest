@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { PaymentDetailComponent } from './payment-detail/payment-detail.component';
 import { PaymentSearchbarComponent } from './payment-searchbar/payment-searchbar.component';
+import { DialogModule } from 'primeng/dialog';
+import { CalendarModule } from 'primeng/calendar';
+import { TableModule } from 'primeng/table';
 
 @Component({
   selector: 'app-payment-manage',
@@ -19,7 +22,10 @@ import { PaymentSearchbarComponent } from './payment-searchbar/payment-searchbar
     ToastModule,
     InputTextModule,
     FormsModule,
+    TableModule,
     DropdownModule,
+    DialogModule,
+    CalendarModule,
     PaymentDetailComponent,
     PaymentSearchbarComponent,
   ],
@@ -30,7 +36,11 @@ import { PaymentSearchbarComponent } from './payment-searchbar/payment-searchbar
 export class PaymentManageComponent {
   value:string| undefined;
   items: MenuItem[];
-
+  visible: boolean = false;
+  date: Date = new Date();
+  selection: any| undefined;
+  selected: any| undefined;
+  products: any[] = [];
     private messageService=inject(MessageService);
     constructor() {
         this.items = [
@@ -52,6 +62,16 @@ export class PaymentManageComponent {
             { separator: true },
             { label: 'Setup', icon: 'pi pi-cog', routerLink: ['/setup'] }
         ];
+        this.selection = [
+          { gender: '男', code: 'TD' },
+          { gender: '女', code: 'YD' },
+          { gender: '其他', code: 'TL' },
+        ];
+        this.products = [
+          {partially:'0'},
+
+        ]
+
     }
 
     save(severity: string) {
@@ -66,6 +86,11 @@ export class PaymentManageComponent {
         this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Data Deleted' });
     }
 
-
+    showDialog() {
+      this.visible = true;
+    }
+    closeDialog(){
+      this.visible = false;
+    }
 
 }

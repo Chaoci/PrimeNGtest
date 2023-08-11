@@ -25,6 +25,16 @@ body {
   border-color: #136c34 !important;
 }
 
+.minus .p-button{
+  width:30px;
+  height:30px;
+  padding: 0;
+  background-color: rgb(233, 146, 146) !important;
+  border-radius: 50%;
+  border: none;
+  color:#000;
+  padding-left: 7px;
+}
 
 .p-tabmenuitem{
   border: 1px solid #136c34 !important;
@@ -68,6 +78,32 @@ body {
   border-bottom:1px solid rgb(182, 181, 181);
   border-right: none;
   border-left:none;
+}
+
+.other-table .p-datatable thead th {
+  font-size: 18px ;
+  color:#3C6353 ;
+  background-color:#DBE5E1 ;
+  padding:0 ;
+  font-weight: bold ;
+  text-align:center ;
+  border:1px solid #000 ;
+}
+
+.other-table .p-datatable tbody td {
+  padding:0;
+  font-weight: bold;
+  text-align: start;
+  padding-top: 5px;
+  padding-right: 2px;
+  border-bottom:1px solid rgb(182, 181, 181);
+}
+
+.table-width-name{
+  width: 40%;
+}
+.table-width-other{
+  width: 5%;
 }
 
 .low-table .p-datatable thead th {
@@ -123,6 +159,24 @@ body {
   height: 100%;
 }
 
+
+.p-dialog .p-dialog-header{
+  background-color: #136c34!important;
+  color: white;
+  padding:15px;
+  padding-top:5px;
+  padding-bottom: 5px;
+}
+
+.p-dialog .p-dialog-content {
+  padding:15px;
+}
+
+
+.p-dialog .p-dialog-header .p-dialog-header-icon{
+  color:white;
+}
+
 .titleColor{
   color:#3C6353;
 }
@@ -137,7 +191,7 @@ body {
 
 .containerClass{
   min-width: 65px;
-  max-width: 300px;
+  /* max-width: 300px; */
   width:65px;
   transition: all 0.5s ease-in;
 }
@@ -155,7 +209,7 @@ body {
 }
 
 .iconStuff{
-  font-size: 24px;
+  font-size: 18px;
   color:rgb(86, 90, 86);
 }
 
@@ -183,11 +237,14 @@ body {
   }
   .heightAdjust2{
     min-height:100px;
-    height: 67vh !important;
+    height: 66vh !important;
     max-height: 780px;
   }
   .height{
     height: 42%;
+  }
+  .p-dialog{
+    max-width: 600px;
   }
 }
 
@@ -199,7 +256,7 @@ body {
   }
   .heightAdjust2{
     min-height:100px;
-    height: 62vh !important;
+    height: 60vh !important;
     max-height: 780px;
   }
   .height{
